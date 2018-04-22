@@ -22,7 +22,7 @@ webpack(webpackConfig).run((err, stats) => {
 
     console.log(`webpack stats: ${stats}`);
 
-    console.log('all good');
+    console.log('all good'.bold.green);
 
     return 0;
 });
