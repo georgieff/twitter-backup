@@ -1,5 +1,6 @@
 {
   "name": "twitter-backup",
+  "homepage": "https://georgieff.github.io/twitter-backup/",
   "version": "1.0.0",
   "scripts": {
     "prestart": "babel-node tools/startMessage.js",
