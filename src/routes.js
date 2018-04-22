@@ -7,6 +7,7 @@ import TweetsPage from './components/tweets/TweetsPage';
 export default (
     <Route path="/" component={App}>
         <IndexRoute component={HomePage} />
+        <Route path="twitter-backup" component={HomePage} />
         <Route path="tweets" component={TweetsPage} />
     </Route>
 );

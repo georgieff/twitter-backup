@@ -3,9 +3,9 @@ node_js:
   - "stable"
 cache:
   directories:
-  - node_modules #Cache node_modules for faster builds
+  - node_modules
 script:
-  - npm run build #Creats a production build
+  - npm run build
 env:
   - NODE_ENV=dev
   - PUBLIC_URL=https://georgieff.github.io/twitter-backup/
