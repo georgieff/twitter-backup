@@ -1,0 +1,165 @@
+/* some basic css */
+/* common */
+body {
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    position: relative;
+    background: rgba(0,0,0,.9);
+    padding: 10px 0;
+    height: 46px;
+    z-index: 6;
+}
+
+.logo {
+    color: #dedede;
+}
+
+.logo mark {
+    background: transparent;
+    font-weight: 500;
+    color: #dedede;
+}
+
+.logo:hover,
+.logo:hover mark {
+    color: #bebebe;
+}
+
+.active {
+    text-decoration: underline;
+}
+
+nav a {
+    color: #dedede;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.move-down {
+    margin-top: 60px;
+}
+
+.row {
+    align-items: flex-start;
+}
+@media (max-width: 39rem) {
+
+    .row .column.column {
+        max-width: none;
+    }
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.tweet p {
+    margin-bottom: 0;
+}
+
+/* homepage */
+
+.section.-hero {
+    background: url('https://picsum.photos/1660/800?image=4') center center #6e6e6e;
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+    margin-top: -46px;
+    color: #efefef;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.section.-hero h1 {
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.section.-marketing {
+    padding: 80px 0;
+    border-bottom: 1px solid #9e9e9e;
+}
+
+/* login */
+.section.-login {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    margin-bottom: -25px;
+    padding-bottom: 80px;
+    margin-top: -46px;
+    padding-top: 80px;
+}
+
+.login-box {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 80px;
+}
+
+.-shadow,
+.login-box {
+    box-shadow: 0 0 50px -10px rgba(0,0,0,.4);
+}
+
+.info-box {
+    margin: 10px 0;
+    padding: 20px;
+}
+
+/* footer */
+
+footer {
+    background: #333;
+}
+
+/* Extending The Inheritances */
+
+/* Custom color */
+.button-white {
+    background-color: #fff;
+    border-color: #fff;
+}
+.button-white.button-clear,
+.button-white.button-outline {
+    background-color: transparent;
+    color: #fff;
+}
+.button-white.button-clear {
+    border-color: transparent;
+}
+.button-white.button-outline:hover {
+    color: #bebebe;
+    border-color: #bebebe;
+}
+
+/* Custom size */
+.button-small {
+    font-size: .8rem;
+    height: 2.8rem;
+    line-height: 2.8rem;
+    padding: 0 1.5rem;
+}
+
+.button-large {
+    font-size: 1.4rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    padding: 0 2rem;
+}
