@@ -7,7 +7,12 @@ cache:
 script:
   - npm run build #Creats a production build
 deploy:
-  provider: heroku
+  provider: pages
+  skip_cleanup: true
+  github_token: $github_token
   local_dir: dist
-  api_key:
-    secure: $heroku_token
+  on:
+    branch: master
+env:
+  - NODE_ENV=production
+  - PUBLIC_URL=https://georgieff.github.io/twitter-backup/
