@@ -7,9 +7,7 @@ cache:
 script:
   - npm run build #Creats a production build
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $github_token
+  provider: heroku
   local_dir: dist
-  on:
-    branch: master
+  api_key:
+    secure: $heroku_token

@@ -3,7 +3,7 @@ import path from 'path';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 const GLOBALS = {
-    'process.env.NOE_ENV': JSON.stringify('production')
+  'process.env.NODE_ENV': JSON.stringify('production')
 };
 
 export default {
