@@ -1,20 +1,22 @@
 import axios from 'axios';
+import mockedTweets from './mockTweets';
 
 class Tweets {
     static getTweets(token, maxId = 0) {
         return new Promise ((resolve, reject) => {
-            axios({
-                method:'get',
-                url:`http://localhost:4000/api/v1/gettweets?maxId=${maxId}`,
-                headers: {'x-auth-token': token}
-            })
-            .then(function (tweets) {
-                const cleanedTweets = Tweets.cleanTweets(tweets.data);
-                resolve(Object.assign([], cleanedTweets));
-            })
-            .catch(function (error) {
-                reject(error);
-            });
+            // axios({
+            //     method:'get',
+            //     url:`http://localhost:4000/api/v1/gettweets?maxId=${maxId}`,
+            //     headers: {'x-auth-token': token}
+            // })
+            // .then(function (tweets) {
+            //     const cleanedTweets = Tweets.cleanTweets(tweets.data);
+            //     resolve(Object.assign([], cleanedTweets));
+            // })
+            // .catch(function (error) {
+            //     reject(error);
+            // });
+            resolve(Object.assign([], mockedTweets));
         });
     }
 

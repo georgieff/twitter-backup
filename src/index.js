@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+/* eslint-disable import/default */
 import React from 'react';
 import { render } from 'react-dom';
 import configureStore from './store/configureStore';
@@ -10,7 +10,6 @@ import 'milligram';
 import './styles/styles.css';
 
 const store = configureStore();
-// store.dispatch(loadTweets());
 
 render(
     <Provider store={store}>

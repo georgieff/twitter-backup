@@ -1,4 +1,5 @@
 import * as types from './actionTypes';
+/*eslint-disable no-console */
 import savedTweetsApi from '../api/savedTweets';
 
 export function loadSavedTweetsSuccess(savedTweets) {

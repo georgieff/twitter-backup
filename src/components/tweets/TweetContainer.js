@@ -49,17 +49,17 @@ class TweetContainer extends React.Component {
                 <Container>
                     <Row>
                         <Column className="column-66">
-                            <h2>Tweets {this.props.tweets.length > 0  && `(${this.props.tweets.length})` }</h2>
+                            <h2>Tweets {this.props.tweets.length > 0  && `(${this.props.tweets.length})`}</h2>
                             <TweetsList tweets={this.props.tweets} onSave={this.saveTweet}  saved={false} />
                             <div className="text-center">
                                 {this.props.tweets.length > 0  &&
-                                <a href="#" onClick={this.loadMoreTweets} className="button">Load more</a> }
+                                <a href="#" onClick={this.loadMoreTweets} className="button">Load more</a>}
                             </div>
                         </Column>
                         <Column className="column-33">
                             <h2>You</h2>
                             <UserBox user={this.props.user} onLogout={this.logoutUser} />
-                            <h2>Saved tweets  {this.props.savedTweets.length > 0 && `(${this.props.savedTweets.length})` }</h2>
+                            <h2>Saved tweets  {this.props.savedTweets.length > 0 && `(${this.props.savedTweets.length})`}</h2>
                             <TweetsList tweets={this.props.savedTweets} onRemove={this.removeSavedTweet} saved />
                         </Column>
                     </Row>

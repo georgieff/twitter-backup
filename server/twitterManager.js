@@ -6,12 +6,15 @@ const twitterManager = {
 
     getUserTweets: (req, res) => {
         const client = twitterManager.newClient(req.user);
-        // console.log(req.query);
-        const params = {count: 10};
+        const params = {count: 11};
+        if(req.query.maxId !== '0') {
+            params.max_id = req.query.maxId;
+        }
 
         client.get('statuses/home_timeline', params, function(error, tweets, response) {
             if (!error) {
-                res.json(tweets);
+
+                res.json(tweets.filter(tweet => tweet.id_str !== req.query.maxId).slice(0, 10));
             } else {
                 return res.status(500).json({ message: error });
             }
