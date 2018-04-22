@@ -6,6 +6,9 @@ cache:
   - node_modules #Cache node_modules for faster builds
 script:
   - npm run build #Creats a production build
+env:
+  - NODE_ENV=production
+  - PUBLIC_URL=https://georgieff.github.io/twitter-backup/
 deploy:
   provider: pages
   skip_cleanup: true
@@ -13,6 +16,3 @@ deploy:
   local_dir: dist
   on:
     branch: master
-env:
-  - NODE_ENV=production
-  - PUBLIC_URL=https://georgieff.github.io/twitter-backup/
