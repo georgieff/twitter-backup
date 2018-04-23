@@ -28,7 +28,7 @@ if(process.env.BASE_SERVICE) {
           return console.log(err);
         }
 
-        const result = data.replace('BASE_SERVICE =', `BASE_SERVICE = ${process.env.BASE_SERVICE}" || `);
+        const result = data.replace('BASE_SERVICE =', `BASE_SERVICE = '${process.env.BASE_SERVICE}' || `);
         fs.writeFile('src/config.js', result, 'utf8', function(err) {
             if (err) {
                return console.log(err);
