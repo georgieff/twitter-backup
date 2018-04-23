@@ -9,9 +9,9 @@ class Users {
                 if(user.id !== undefined) {
                     resolve(Object.assign({}, user));
                 } else {
-                    reject('no session');
+                    reject();
                 }
-            }, 500);
+            }, 1000);
         });
     }
 
@@ -20,7 +20,7 @@ class Users {
             setTimeout(() => {
                 window.localStorage.setItem(LS_USER_PROPERTY, JSON.stringify(newUser));
                 resolve(newUser);
-            }, 500);
+            }, 800);
         });
     }
 
@@ -29,7 +29,7 @@ class Users {
             setTimeout(() => {
                 window.localStorage.setItem(LS_USER_PROPERTY, JSON.stringify({}));
                 resolve(true);
-            }, 200);
+            }, 500);
         });
     }
 }

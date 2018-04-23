@@ -14,7 +14,7 @@ const UsersManager = {
             if (user !== undefined) {
                 resolve(user);
             } else {
-                reject('user not found');
+                reject({code: 404, message: "user not found"});
             }
         });
     },

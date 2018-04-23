@@ -1,4 +1,5 @@
 export const LOAD_TWEETS = 'LOAD_TWEETS';
+export const LOAD_MORE_TWEETS = 'LOAD_MORE_TWEETS';
 export const LOAD_SAVED_TWEETS = 'LOAD_SAVED_TWEETS';
 export const CLEAR_TWEETS = 'CLEAR_TWEETS';
 

@@ -16,9 +16,28 @@ class Tweets {
                 resolve(Object.assign([], cleanedTweets));
             })
             .catch(function (error) {
-                reject(error);
+                reject(error.response);
             });
             // resolve(Object.assign([], mockedTweets));
+        });
+    }
+
+    static retweet(token, {id_str}) {
+        return new Promise ((resolve, reject) => {
+            axios({
+                method:'post',
+                url:`${envConfig.RETWEET}`,
+                data: {
+                    id: id_str
+                },
+                headers: {'x-auth-token': token}
+            })
+            .then(function () {
+                resolve(id_str);
+            })
+            .catch(function (error) {
+                reject(error.response);
+            });
         });
     }
 

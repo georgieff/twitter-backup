@@ -8,6 +8,7 @@ import routes from './routes';
 import {loadTweets} from './actions/tweetsActions';
 import 'milligram';
 import './styles/styles.css';
+import '../node_modules/toastr/build/toastr.min.css';
 
 const store = configureStore();
 

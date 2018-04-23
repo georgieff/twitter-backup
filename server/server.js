@@ -61,7 +61,7 @@ router.route('/auth/twitter')
       form: { oauth_verifier: req.query.oauth_verifier }
     }, function (err, r, body) {
       if (err) {
-        return res.send(500, { message: err.message });
+        return res.status(500).json({ message: err.message });
       }
 
       const bodyString = '{ "' + body.replace(/&/g, '", "').replace(/=/g, '": "') + '"}';
@@ -75,7 +75,7 @@ router.route('/auth/twitter')
     });
   }, passport.authenticate('twitter-token', {session: false}), function(req, res, next) {
       if (!req.user) {
-        return res.send(401, 'User Not Authenticated');
+        return res.status(401).json({message: 'User Not Authenticated'});
       }
 
       // prepare token for API
@@ -91,7 +91,7 @@ const getCurrentUser = function(req, res, next) {
     req.user = user;
     next();
   }).catch((err) => {
-    next(err);
+    res.status(401).json({message: 'User Not Authenticated'});
   });
 };
 
@@ -100,6 +100,9 @@ router.route('/auth/me')
 
 router.route('/gettweets')
   .get(tokenManager.authenticate, getCurrentUser, twitterManager.getUserTweets);
+
+router.route('/retweet')
+  .post(tokenManager.authenticate, getCurrentUser, twitterManager.retweet);
 
 app.use('/api/v1', router);
 

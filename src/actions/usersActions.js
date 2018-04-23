@@ -1,4 +1,3 @@
-/*eslint-disable no-console */
 import * as types from './actionTypes';
 import usersApi from '../api/users';
 
@@ -19,8 +18,7 @@ export function loadUser() {
         return usersApi.getUser().then(user => {
             dispatch(loadUserSuccess(user));
         }).catch(error => {
-            console.log(error);
-            // throw(error);
+            throw(error);
         });
     };
 }
@@ -30,8 +28,7 @@ export function authUser(user) {
         return usersApi.authUser(user).then(user => {
             dispatch(authUserSuccess(user));
         }).catch(error => {
-            console.log(error);
-            // throw(error);
+            throw(error);
         });
     };
 }
@@ -41,8 +38,7 @@ export function logoutUser(user) {
         return usersApi.logoutUser(user).then(() => {
             dispatch(logoutUserSuccess());
         }).catch(error => {
-            console.log(error);
-            // throw(error);
+            throw(error);
         });
     };
 }

@@ -52,9 +52,11 @@ nav a {
 .row {
     align-items: flex-start;
 }
-@media (max-width: 39rem) {
+@media (max-width: 40rem) {
 
-    .row .column.column {
+    .row .column.column,
+    .row .column.column-66,
+    .row .column.column-33 {
         max-width: none;
     }
 }
@@ -65,6 +67,10 @@ nav a {
 
 .tweet p {
     margin-bottom: 0;
+}
+
+.plus-5 {
+    margin-right: 5px;
 }
 
 /* homepage */

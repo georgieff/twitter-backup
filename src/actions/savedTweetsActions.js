@@ -1,6 +1,6 @@
 import * as types from './actionTypes';
-/*eslint-disable no-console */
 import savedTweetsApi from '../api/savedTweets';
+import tweets from '../api/tweets';
 
 export function loadSavedTweetsSuccess(savedTweets) {
     return { type: types.LOAD_SAVED_TWEETS, savedTweets: savedTweets};
@@ -20,37 +20,44 @@ export function clearSavedTweets() {
 
 
 export function loadSavedTweets() {
-    return  (dispatch, getState) => {
+    return (dispatch, getState) => {
         const userId = getState().user.id;
         return savedTweetsApi.getAllSavedTweets(userId).then(savedTweets => {
             dispatch(loadSavedTweetsSuccess(savedTweets));
         }).catch(error => {
-            console.log(error);
-            // throw(error);
+            throw(error);
         });
     };
 }
 
 export function addSavedTweet(tweet) {
-    return  (dispatch, getState) => {
+    return (dispatch, getState) => {
         const userId = getState().user.id;
         return savedTweetsApi.addSavedTweet(tweet, userId).then(savedTweet => {
             dispatch(addSavedTweetSuccess(savedTweet));
         }).catch(error => {
-            console.log(error);
-            // throw(error);
+            throw(error);
         });
     };
 }
 
 export function removeSavedTweet(tweet) {
-    return  (dispatch, getState) => {
+    return (dispatch, getState) => {
         const userId = getState().user.id;
         return savedTweetsApi.removeSavedTweet(tweet, userId).then(id => {
             dispatch(removeSavedTweetSuccess(id));
         }).catch(error => {
-            console.log(error);
-            // throw(error);
+            throw(error);
         });
+    };
+}
+
+export function retweetSavedTweet(tweet) {
+    return (dispatch, getState) => {
+        const token = getState().user.token;
+        return tweets.retweet(token, tweet)
+            .catch(error => {
+                throw(error);
+            });
     };
 }
