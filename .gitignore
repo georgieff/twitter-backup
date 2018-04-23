@@ -35,5 +35,3 @@ dist
 # Mac files
 .DS_Store
 .vscode
-
-src/config.js
