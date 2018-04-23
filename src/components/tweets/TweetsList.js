@@ -30,7 +30,8 @@ TweetList.propTypes = {
     tweets: PropTypes.array.isRequired,
     saved: PropTypes.bool,
     onSave: PropTypes.func,
-    onRemove: PropTypes.func
+    onRemove: PropTypes.func,
+    onRetweet: PropTypes.func
 };
 
 export default TweetList;
