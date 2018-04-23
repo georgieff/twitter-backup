@@ -7,8 +7,7 @@ cache:
 script:
   - npm run build
 env:
-  - NODE_ENV=dev
-  - PUBLIC_URL=https://georgieff.github.io/twitter-backup/
+  - NODE_ENV=production
 deploy:
   provider: pages
   skip_cleanup: true

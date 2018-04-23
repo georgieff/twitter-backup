@@ -19,4 +19,11 @@ fs.readFile('src/index.html', 'utf8', (err, markup) => {
         }
         console.log('index.html written to /dist'.green);
     });
+
+    fs.rename('src/config.example.js', 'src/config.js',function (err) {
+        if(err) {
+            console.log(err);
+        }
+        console.log('config renamed'.green);
+    });
 });
