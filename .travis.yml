@@ -7,7 +7,7 @@ cache:
 script:
   - npm run build
 env:
-  - NODE_ENV=deploy
+  - BASE_SERVICE=http://testdomain.com
 deploy:
   provider: pages
   skip_cleanup: true
