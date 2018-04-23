@@ -1,9 +1,5 @@
 const localStorage = require('localStorage');
-const initUsers = {
-    '87125782' : { id: '87125782',
-        token: '87125782-xUgvxoSJ3OaFqLZBjdVJhm2yZGcpGYVYxvEwYmAw8',
-        tokenSecret: 'PnKqP3ZrOJ7lVGJDHZFUoyDk3wzjHaZgnCeZaFVlGHj47' }
-};
+const initUsers = {};
 
 const UsersManager = {
 
