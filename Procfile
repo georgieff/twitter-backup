@@ -1,1 +1,1 @@
-web: npm run servedist
+web: npm run build && npm run servedist
