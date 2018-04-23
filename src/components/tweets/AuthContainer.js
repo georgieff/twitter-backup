@@ -9,6 +9,8 @@ import TwitterLogin from 'react-twitter-auth';
 import TweetsList from './TweetsList';
 import {Section} from '../common/Grid';
 
+import envConfig from '../../config';
+
 class AuthContainer extends React.Component {
     constructor(props, context) {
         super(props, context);
@@ -37,9 +39,9 @@ class AuthContainer extends React.Component {
                 <div className="login-box text-center">
                     <h1>Login</h1>
                     <h4>in order to see your tweets</h4>
-                    <TwitterLogin loginUrl="http://localhost:4000/api/v1/auth/twitter"
+                    <TwitterLogin loginUrl={`${envConfig.LOGIN_URL}`}
                       onFailure={this.onFailed} onSuccess={this.onSuccess}
-                      requestTokenUrl="http://localhost:4000/api/v1/auth/twitter/reverse"/>
+                      requestTokenUrl={`${envConfig.REQUEST_TOKEN}`}/>
                 </div>
             </Section>
         );

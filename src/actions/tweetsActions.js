@@ -6,6 +6,10 @@ export function loadTweetsSuccess(tweets) {
     return { type: types.LOAD_TWEETS, tweets: tweets};
 }
 
+export function clearTweets() {
+    return { type: types.CLEAR_TWEETS};
+}
+
 export function loadTweets() {
     return  (dispatch, getState) => {
         const token = getState().user.token;

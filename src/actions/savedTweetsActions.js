@@ -14,6 +14,11 @@ export function removeSavedTweetSuccess(tweetId) {
     return { type: types.REMOVE_SAVED_TWEET, tweetId: tweetId};
 }
 
+export function clearSavedTweets() {
+    return { type: types.CLEAR_SAVED_TWEETS};
+}
+
+
 export function loadSavedTweets() {
     return  (dispatch, getState) => {
         const userId = getState().user.id;

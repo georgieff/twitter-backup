@@ -6,6 +6,10 @@ export default function tweetReducer(state = [], action) {
                 ...state,
                 ...action.tweets
             ];
+
+        case types.CLEAR_TWEETS:
+            return [];
+
         default:
             return state;
     }

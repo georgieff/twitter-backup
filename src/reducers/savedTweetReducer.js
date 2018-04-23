@@ -16,6 +16,9 @@ export default function savedTweetReducer(state = [], action) {
                 ...state.filter(tweet => tweet.id !== action.tweetId)
             ];
 
+        case types.CLEAR_SAVED_TWEETS:
+            return [];
+
         default:
             return state;
     }

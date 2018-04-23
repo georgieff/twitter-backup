@@ -41,6 +41,8 @@ class TweetContainer extends React.Component {
     logoutUser(event) {
         event.preventDefault();
         this.props.actions.logoutUser(this.props.user);
+        this.props.actions.clearTweets();
+        this.props.actions.clearSavedTweets();
     }
 
     render() {
