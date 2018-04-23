@@ -17,6 +17,7 @@ fs.readFile('src/index.html', 'utf8', (err, markup) => {
         if(err) {
             console.log(err);
         }
+        console.log(process.env.NODE_ENV);
         console.log('index.html written to /dist'.green);
     });
 
