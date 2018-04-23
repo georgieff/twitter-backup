@@ -17,8 +17,23 @@ fs.readFile('src/index.html', 'utf8', (err, markup) => {
         if(err) {
             console.log(err);
         }
-        console.log(process.env.NODE_ENV);
         console.log('index.html written to /dist'.green);
     });
 
 });
+
+if(process.env.BASE_SERVICE) {
+    fs.readFile('src/config.js', 'utf8', function(err, data) {
+        if (err) {
+          return console.log(err);
+        }
+
+        const result = data.replace('BASE_SERVICE =', `BASE_SERVICE = ${process.env.BASE_SERVICE}" ||`);
+        fs.writeFile('src/config.js', result, 'utf8', function(err) {
+            if (err) {
+               return console.log(err);
+            }
+            console.log('edit service path for the env'.green);
+        });
+    });
+}

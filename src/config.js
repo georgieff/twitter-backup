@@ -1,4 +1,4 @@
-const BASE_SERVICE = process.env.BASE_SERVICE || 'http://localhost:4000/api/v1/';
+const BASE_SERVICE = 'http://localhost:4000/api/v1/';
 
 const config = {
     PUBLIC_URL: 'http://localhost:3000/',
